@@ -5,6 +5,7 @@ def valid_move?(board,position)
 else
   position_taken?(board, position.to_i - 1)
 end
+end
 
 def position_taken?(board,position)
   return false if [" ", "", nil].include?(board[position])
