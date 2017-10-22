@@ -1,12 +1,29 @@
-# code your #valid_move? method here
+Ruby
 
-def valid_move?(board,position)
-  if position.between?(0,8) && !position_taken?(board, index)
-        true
+def valid_move?(board, index)
+    if index.between?(0,8) && !position_taken?(board, index)
+      true
+    end
 end
 
-def position_taken?(board,position)
-  return false if [" ", "", nil].include?(board[position])
-  return true if ["X", "O"].include?(board[position])
-  raise "#{board[position]} is not a valid move"
+def position_taken?(board, index)
+  if board[index] == " " || board[index] == "" || board[index] == nil
+    false
+  else board[index] == "X" || board[index] == "O"
+    true
+  end
+end
+
+def valid_move?(board, index)
+    if index.between?(0,8) && !position_taken?(board, index)
+      true
+    end
+end
+ 
+def position_taken?(board, index)
+  if board[index] == " " || board[index] == "" || board[index] == nil
+    false
+  else board[index] == "X" || board[index] == "O"
+    true
+  end
 end
